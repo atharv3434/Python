@@ -8,3 +8,18 @@ Write a script that accepts a positive integer $N$ from the user and calculates 
 
 """
 
+def main():
+    n = int(input("Enter the Number : "))
+    if n == 0:
+        print("Enter a Positiv Number!!! ")
+        return
+    
+    sum = 0
+    for i in range(1,n+1):
+        sum += i
+
+    print(f"Sum : {sum}")    
+
+
+
+main()    
