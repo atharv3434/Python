@@ -18,7 +18,7 @@ def main():
     sub_len = len(sub_string)
     count = 0
 
-    # Slide across the string up to the point where the remaining slice fits the substring length
+    
     for i in range(len(text) - sub_len + 1):
         if text[i : i + sub_len] == sub_string:
             count += 1

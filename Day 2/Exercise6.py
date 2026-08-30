@@ -12,29 +12,23 @@ Sample Output: "Ylqrg"
 
 def main():
     text = input("Enter your message: ")
-    shift = int(input("Enter shift value (e.g., 3): "))
+    shift = int(input("Enter shift value "))
 
-    # 1. ENCRYPTION
     encrypted_chars = []
     for char in text:
         if char.isupper():
-            # Shift uppercase letter within 'A' - 'Z'
             shifted = (ord(char) - ord('A') + shift) % 26 + ord('A')
             encrypted_chars.append(chr(shifted))
         elif char.islower():
-            # Shift lowercase letter within 'a' - 'z'
             shifted = (ord(char) - ord('a') + shift) % 26 + ord('a')
             encrypted_chars.append(chr(shifted))
         else:
-            # Keep spaces, numbers, and punctuation unchanged
             encrypted_chars.append(char)
 
     encrypted_text = "".join(encrypted_chars)
 
-    # 3. OUTPUT
     print("\n--- RESULT ---")
     print(f"Original Text  : {text}")
     print(f"Encrypted Text : {encrypted_text}")
 
-if __name__ == "__main__":
-    main()
+main()
