@@ -6,12 +6,9 @@
 #     def __str__(self):
 #         return f"Hello {self.name}, You are {self.age} Year's Old"
 
-
-
 # s1 = Student("Atharv", 23)  
 # fruits = "Apple, Mango,   Guava, Pineapple"
 # print("=" * 30)
-
 
 # city = "Bangalore"
 
@@ -24,8 +21,6 @@
 # # print(s1)  
 # # print(fruits.split(","))
 # # print(fruits)
-
-
 
 for i in range(0,6):
     for j in range(0,i):
