@@ -1,0 +1,34 @@
+[
+      {
+            "id": 1,
+            "title": "Let us C",
+            "author": "Atharv",
+            "genre": "Programming",
+            "price": 799.0,
+            "quantity": 35
+      },
+      {
+            "id": 2,
+            "title": "Athasha",
+            "author": "Akanksha",
+            "genre": "Romance",
+            "price": 799.0,
+            "quantity": 80
+      },
+      {
+            "id": 3,
+            "title": "DAta Science",
+            "author": "Vinod",
+            "genre": "Data",
+            "price": 999.0,
+            "quantity": 150
+      },
+      {
+            "id": 4,
+            "title": "DSA",
+            "author": "Striver",
+            "genre": "Computer Science",
+            "price": 899.0,
+            "quantity": 250
+      }
+]
