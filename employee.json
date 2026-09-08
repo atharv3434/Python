@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Atharv Nakti",
+        "department": "Cloud",
+        "salary": 85000.0
+    },
+    {
+        "id": 2,
+        "name": "Akanksha Yadav",
+        "department": "Data Science",
+        "salary": 90000.0
+    },
+    {
+        "id": 3,
+        "name": "Khushi",
+        "department": "Service Desk",
+        "salary": 50000.0
+    },
+    {
+        "id": 4,
+        "name": "Ghazy",
+        "department": "Human Resourses",
+        "salary": 85000.0
+    }
+]

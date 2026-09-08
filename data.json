@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Let us C",
+        "price": 599.0,
+        "quantity": 75
+    },
+    {
+        "id": 1,
+        "name": "Java Unleashed",
+        "price": 799.0,
+        "quantity": 85
+    },
+    {
+        "id": 1,
+        "name": "Python",
+        "price": 899.0,
+        "quantity": 34
+    },
+    {
+        "id": 1,
+        "name": "Data Science",
+        "price": 999.0,
+        "quantity": 99
+    }
+]

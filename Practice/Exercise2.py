@@ -130,7 +130,7 @@ def view_products():
         print("No Products in the System, Add it...")
         return
 
-    view_many_products(product)      
+    view_many_products()      
 
 
 def view_one_product(p_id):
