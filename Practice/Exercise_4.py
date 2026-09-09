@@ -3,6 +3,7 @@ Library Book Management System
 """
 
 import json
+import csv
 
 books = []
 
@@ -484,6 +485,48 @@ def load_from_json():
         print(f"Error Occurred while Loading File: {e}")
 
 
+
+def save_to_csv():
+    try:
+        with open('data.csv','w',encoding='utf-8') as file:
+            writer = csv.DictWriter(file, fieldnames=['id','title','author','genre','price','quantity'])
+            writer.writeheader()
+            writer.writerows(books)     
+
+    except Exception as e:
+        print("Error occured while saving the File")        
+
+
+def load_from_csv():
+    global books, id_counter
+    try:
+        with open('data.csv', 'r', encoding='utf-8') as file:
+            # DictReader automatically infers field names from the first row
+            reader = csv.DictReader(file)
+            
+            loaded_books = []
+            for row in reader:
+                # Cast types back to int and float
+                row['id'] = int(row['id'])
+                row['title'] = (row['title'])
+                row['author'] = (row['author'])
+                row['price'] = float(row['price'])
+                row['copies'] = int(row['copies'])
+                loaded_books.append(row)
+
+            if loaded_books:
+                books = loaded_books
+                id_counter = max([b['id'] for b in books], default=0)
+                print(f"Successfully loaded {len(books)} books from 'data.csv'!")
+            else:
+                print("File 'data.csv' is empty.")
+
+    except FileNotFoundError:
+        print("Error: 'data.csv' not found. Save the file first before loading.")
+    except Exception as e:
+        print(f"Error occurred while loading the file: {e}")
+
+
 # --------------------------------------------------
 # MAIN
 # --------------------------------------------------
@@ -527,6 +570,15 @@ def main():
             print("Application Termination Successful. Good Bye!!")
             break
 
+        elif choice == 9:
+            save_to_csv()
+
+        elif choice == 10:
+            load_from_csv()  
+
+        elif choice == 11:
+            load_from_csv()      
+
         else:
 
             print("Invalid Option Selected!!")
@@ -535,6 +587,9 @@ def main():
 # --------------------------------------------------
 # PROGRAM START
 # --------------------------------------------------
+            
+
+
 
 if __name__ == "__main__":
     main()
