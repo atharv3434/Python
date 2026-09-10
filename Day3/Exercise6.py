@@ -16,16 +16,13 @@ Curved: [55, 93, 40, 100, 55]
 """
 
 def main():
-    # 1. Read input and convert each space-separated value into an integer
     original = [int(x) for x in input("Enter the Numbers: ").strip().split()]
 
-    # 2. Single list comprehension applying conditions and capping at 100
     curved = [
         min(100, score + 10) if score < 50 else min(100, score + 5)
         for score in original
     ]
 
-    # 3. Print the results
     print(f"Original: {original}")
     print(f"Curved: {curved}")
 
