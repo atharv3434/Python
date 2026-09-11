@@ -45,72 +45,74 @@ Example Walkthrough
 """
 
 
-inventory = {"Let us C":10.,
-                   "Fun with Java": 20,
-                   "Fremadsprache" : 15,
-                   "Little Women" : 5
-            }
-
-def manage_bookstore_inventory(inventory, action, book_title,quantity=0):
-
+def manage_bookstore_inventory(inventory, action, book_title, quantity=0):
 
     if action == "add":
+
         if book_title in inventory:
-            inventory[book_title] +=  quantity
-        else :
-            inventory[book_title] = quantity    
-            print(inventory)
+            inventory[book_title] += quantity
+        else:
+            inventory[book_title] = quantity
 
-            
     elif action == "sell":
+
         if book_title not in inventory:
-            print(f"Error:book {book_title} not found in inventory")
-            return
+            print(f"Error: Book '{book_title}' not found in inventory.")
+            return inventory
 
-        current_books = inventory[book_title]
+        current_stock = inventory[book_title]
 
-        if quantity > current_books:
-            print(f"Error : Insufficient stock for {book_title}. Available Copies : ={current_books}")
-            return
+        if quantity > current_stock:
+            print(f"Error: Insufficient stock for '{book_title}'. Available: {current_stock}.")
+            return inventory
 
-        if quantity == current_books:
-            print(f"Available :{book_title} = {current_books}")
-            inventory[book_title] -=  quantity
+        inventory[book_title] -= quantity
+
+        if inventory[book_title] == 0:
             del inventory[book_title]
-            print(f"The Books has been Sold Successfully {inventory}")
+
+    elif action == "lookup":
+
+        stock = inventory.get(book_title, 0)
+        print(f"Stock for '{book_title}': {stock}")
+
+    else:
+        print(f"Error: Invalid action '{action}'.")
+
+    return inventory
+
+
+def main():
+
+    inventory = {
+        "Python Basics": 10,
+        "Learning AI": 5
+    }
+
+    inventory = manage_bookstore_inventory(
+        inventory, "add", "Python Basics", 5
+    )
+    print(inventory)
+
+    inventory = manage_bookstore_inventory(
+        inventory, "sell", "Data Science 101", 1
+    )
+    print(inventory)
+
+    inventory = manage_bookstore_inventory(
+        inventory, "sell", "Learning AI", 10
+    )
+    print(inventory)
+
+    inventory = manage_bookstore_inventory(
+        inventory, "sell", "Learning AI", 5
+    )
+    print(inventory)
+
+    inventory = manage_bookstore_inventory(
+        inventory, "lookup", "Python Basics"
+    )
 
 
 
-
-
-        #     if inventory[book_title] >= quantity:
-        #         inventory[book_title] -= quantity
-        #         print(inventory)    
-        #     else:
-        #         print(f"Error : Insufficient stock for {book_title}")
-        #         print(f"Available : {inventory[book_title]}")
-        # else:
-        #     print(f"Error:book {book_title} not found in inventory")
-
-
-
-
-
-
-    elif action == "lookup" :
-        return inventory.get(book_title, 0)
-        
-    else: 
-        print("Invalid Option!!!")
-        return
-
-
-
-print("------------------------"+"Inventory Menu"+"----------------------------")
-print("To Add the Boooks : write 'add'")
-print("To Sell the Boooks : write 'sell")
-print(" To Lookup the Books : 'lookup' ")
-action = input("Write To Operate : ").lower().strip()
-
-
-manage_bookstore_inventory(inventory,action,"Little Women",5)
+main()
