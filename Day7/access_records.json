@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2026-09-01 10:15:30",
+    "user_id": "USR102",
+    "endpoint": "/api/v1/predict",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:20:15",
+    "user_id": "USR103",
+    "endpoint": "/api/v1/login",
+    "status_code": 401
+  },
+  {
+    "timestamp": "2026-09-01 10:25:45",
+    "user_id": "USR104",
+    "endpoint": "/api/v1/users",
+    "status_code": 200
+  }
+]
