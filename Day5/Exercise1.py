@@ -58,8 +58,5 @@ def calculate_cafeteria_bill(base_price, *items, tax_rate=0.05, discount=0.0, de
 
 
 
-
-
-
 total_bill = calculate_cafeteria_bill(100.0, 20.0, 30.0, tax_rate=0.08, discount=10.0, delivery_fee=15.0)
 print(f"Your Final Bill is {total_bill:.2f}")

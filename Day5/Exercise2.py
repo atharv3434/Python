@@ -26,22 +26,20 @@ print(validate_academic_email("bob@mit.edu.com"))          # Output: False (does
 
 import re
 
-
-pattern = r"^([a-z0-9._]+)@[a-z0-9._]+(\.edu|\.res\.in)$"
+pattern = r"^[a-z0-9._]+@[a-z0-9._-]+(\.edu|\.res\.in)$"
 
 def validate_academic_email(email):
-    # print(re.findall(pattern,email))
 
-    print(email)
-    print(re.match(pattern, email))
-
-    return re.match(pattern, email) is not None
-     
-    # if re.fullmatch(pattern,email):
-    #     return True
-    # else:
-    #     return False
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
 
 
+print(validate_academic_email("arham.khan@cdac.res.in"))
+print(validate_academic_email("lisa_stud12@mit.edu"))
+print(validate_academic_email("vinod@gmail.com"))
+print(validate_academic_email("ALICE@college.edu"))
+print(validate_academic_email("bob@mit.edu.com"))
 
-print(validate_academic_email("arham.khan@cdac.com"))    
+

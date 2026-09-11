@@ -32,15 +32,44 @@ Expected Output
 """
 
 
+def process_dataset(dataset):
+
+    parsed_data = list(map(lambda item: (item[0],float(item[1].split(":")[1]),float(item[2].split(":")[1])),dataset))
+
+    filtered_data = list(filter(
+        lambda item: item[1] <= 1000.0,
+        parsed_data
+    ))
+
+    result = list(map(
+        lambda item: {
+            "product": item[0],
+            "price": item[1],
+            "score": item[2]
+        },
+        filtered_data
+    ))
+
+    result = sorted(
+        result,
+        key=lambda item: item["score"],
+        reverse=True
+    )
+
+    return result
+
+
 def main():
 
-    n = 5
-    for i in range(0,n):
-        for j in range(0,n):
-            print(" * ")
+    data_input = [
+        ("Laptop", "Price: 1200", "Rating: 4.8"),
+        ("Phone", "Price: 800", "Rating: 4.5"),
+        ("Mouse", "Price: 25", "Rating: 4.7"),
+        ("Charger", "Price: 15", "Rating: 4.2")
+    ]
 
-        print()        
+    result = process_dataset(data_input)
 
+    print(result)
 
-
-main()    
+main()
