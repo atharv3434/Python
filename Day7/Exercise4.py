@@ -31,8 +31,6 @@ print(user_info["email"])  # Output: arham@cdac.in
 # Update existing user
 status2 = db.add_or_update_user("arham_k", "Bengaluru, KA", "9876543210", "arham@cdac.in")
 print(status2)  # Output: UPDATED
-
-
 """
 
 import sqlite3
