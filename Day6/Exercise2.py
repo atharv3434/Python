@@ -21,7 +21,6 @@ truck = DeliveryTruck("Volvo", "FH16", 300.0, cargo_load=2.0)
 # 2.0 tons load reduces range by 20% (10% * 2) -> 1500 * 0.8 = 1200 km.
 print(truck.calculate_range(5.0)) # Output: 1200.0
 print(truck.get_description())    # Output: Truck: Volvo FH16 carrying 2.0 tons
-
 """
 
 class Vehicle:
