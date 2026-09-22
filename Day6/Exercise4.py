@@ -1,5 +1,5 @@
 """
-ssignment 4: Hospital Patient Register
+Assignment 4: Hospital Patient Register
 Scenario
 A hospital patient ledger automatically tracks patient counts and assigns sequentially numbered keys. It also validates input dates to prevent registration crashes.
 
