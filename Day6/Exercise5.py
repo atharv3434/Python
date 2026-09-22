@@ -33,7 +33,6 @@ Expected Console Output Logs:
 [Email via smtp.cdac.in] sending: Disk space 95%
 [SMS via gw.acts.com] sending: Disk space 95%
 [Notifier SYS-ADMIN] general broadcast: Disk space 95%
-
 """
 
 class Notifier:
