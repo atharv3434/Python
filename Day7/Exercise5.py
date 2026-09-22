@@ -1,5 +1,5 @@
-"""
-Assignment 5: Transactional Banking Ledger with SQLite & ACID Rollback Management
+"""Assignment 5: Transactional Banking Ledger with SQLite & ACID Rollback Management
+
 Scenario
 A financial transaction engine executes fund transfers between accounts in a SQLite database. The engine must support ACID guarantees: if any part of a transfer fails (e.g. insufficient funds, invalid account), the entire transaction must roll back cleanly.
 
@@ -37,7 +37,6 @@ except TransactionError as e:
 # Balances remain untouched
 print(bank.get_balance("ACC101"))  # Output: 3500.0
 print(bank.get_balance("ACC102"))  # Output: 3500.0
-
 """
 
 
