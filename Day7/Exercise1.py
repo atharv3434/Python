@@ -2,7 +2,6 @@
 Assignment 1: Structured CSV & JSON Data Processor
 
 Scenario
-
 An academic registrar stores student course registrations in a CSV file.
 You need to read this file, compute overall statistics, and export a summarized JSON report.
 
@@ -39,7 +38,6 @@ process_student_records("students.csv", "summary.json")
 #         "BDA": 1
 #     }
 # }
-
 """
 
 import json
