@@ -15,7 +15,6 @@ Writes all parsed records to output_csv_path with a header row using csv.DictWri
 Writes the list of records to output_json_path with an indentation of 2 spaces using json.dump().
 Example Walkthrough
 convert_log_file("server_access.log", "access_records.csv", "access_records.json")
-
 """
 
 import csv
